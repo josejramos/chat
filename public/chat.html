@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        #chatContainer {
+            width: 80%;
+            max-width: 900px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+            overflow: hidden;
+        }
+        #messageContainer {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+            background-color: #fafafa;
+        }
+        .message {
+            display: flex;
+            align-items: flex-start;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #fff;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+        .message .username {
+            font-weight: bold;
+            color: #333;
+            margin-right: 10px;
+        }
+        .message .content {
+            display: flex;
+            flex-direction: column;
+        }
+        .message .text {
+            color: #555;
+        }
+        .message img {
+            max-width: 200px; /* Limita a largura da imagem */
+            max-height: 200px; /* Limita a altura da imagem */
+            height: auto;
+            border-radius: 8px;
+            margin-top: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        #inputContainer {
+            padding: 10px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+        #messageInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        #sendMessageButton {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #sendMessageButton:hover {
+            background-color: #0056b3;
+        }
+        #fileInput {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatContainer">
+        <h1>Chat</h1>
+        <div id="messageContainer"></div>
+        <div id="inputContainer">
+            <input type="file" id="fileInput" />
+            <input type="text" id="messageInput" placeholder="Digite uma mensagem" />
+            <button id="sendMessageButton">Enviar</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
+

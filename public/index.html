@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo de Imagens e Mensagens</title>
+    <style>
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        img {
+            max-width: 300px;
+            margin: 10px;
+        }
+        #messageContainer {
+            margin-top: 20px;
+        }
+        .message {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grupo de Imagens e Mensagens</h1>
+
+    <input type="file" id="fileInput" />
+    <div id="imageContainer"></div>
+
+    <div id="messageContainer"></div>
+    <input type="text" id="messageInput" placeholder="Digite uma mensagem" />
+    <button id="sendMessageButton">Enviar</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
